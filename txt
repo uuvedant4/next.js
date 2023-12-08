@@ -1,0 +1,8 @@
+// Link
+// usePathname()
+// useRouter()
+// prefetching
+// Router cache
+// static routing
+// dynamic routing
+// route groups
