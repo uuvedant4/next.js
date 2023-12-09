@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
+import Loading from "./loading";
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
+
+const Products = dynamic(() => import("../components/Products"), {
+  suspense: true,
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +25,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div>Root Layout</div>
+        <Suspense fallback={<Loading />}>
+          <Products />
+        </Suspense>
         {children}
       </body>
     </html>
