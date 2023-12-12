@@ -1,16 +1,15 @@
-"use client";
+const getProducts = async () => {
+  await new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("hi");
+    }, 2000);
+  });
+  const response = await fetch("https://fakestoreapi.com/products");
+  return response.json();
+};
 
-import { useState, useEffect } from "react";
-
-export default function Products() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => setProducts(data))
-      .catch((error) => console.log(error.message));
-  }, []);
+export default async function Products() {
+  const products = await getProducts();
 
   return (
     <div>

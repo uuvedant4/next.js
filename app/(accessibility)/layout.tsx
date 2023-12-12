@@ -3,11 +3,7 @@ import { Inter } from "next/font/google";
 import "../globals.css";
 import Loading from "./loading";
 import { Suspense } from "react";
-import dynamic from "next/dynamic";
-
-const Products = dynamic(() => import("../components/Products"), {
-  suspense: true,
-});
+import Products from "../components/Products";
 
 const inter = Inter({ subsets: ["latin"] });
 
