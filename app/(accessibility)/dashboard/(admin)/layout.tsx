@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../../../globals.css";
+import { ErrorBoundary } from "next/dist/client/components/error-boundary";
+import Error from "./error";
+import Products from "@/app/components/Products";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +21,9 @@ export default function RootLayout({
     <>
       <div>Root Layout For Admin Route Group</div>
       {children}
+      <ErrorBoundary fallback={<Error />}>
+        <Products />
+      </ErrorBoundary>
     </>
   );
 }
