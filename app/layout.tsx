@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../globals.css";
-import Loading from "./loading";
-import { Suspense } from "react";
-import Products from "../components/Products";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,15 +10,23 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  teams,
+  analytics,
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  teams: React.ReactNode;
+  analytics: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div>Root Layout</div>
-        {children}
+        <div className="mb-6 p-4 bg-blue-500 text-white text-lg">
+          Root Layout
+        </div>
+        <div className="gap-5 flex justify-center align-middle">
+          <div>{teams}</div>
+          <div>{analytics}</div>
+        </div>
       </body>
     </html>
   );
