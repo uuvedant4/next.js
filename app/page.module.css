@@ -1,18 +1,17 @@
 .container {
-  border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 24px;
-  padding: 10px;
+  gap: 30px;
+  padding: 20px;
 }
 
 .imgContainer {
   height: 300px;
   width: 250px;
-  border: 1px solid rgb(169, 168, 168);
-  border-radius: 6px;
+  border: 1px solid rgb(210, 197, 197);
+  border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
 }
