@@ -2,7 +2,7 @@ import styles from "./page.module.css";
 import Modal from "@/app/components/Modal";
 
 const getProduct = async (id) => {
-  const response = await fetch(`https://dummyjson.com/product/${id}`);
+  const response = await fetch(`http://localhost:3000/api/product/${id}`);
   return response.json();
 };
 
